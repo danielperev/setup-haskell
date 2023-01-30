@@ -206,7 +206,7 @@ async function ghcup(tool: Tool, version: string, os: OS): Promise<void> {
   const bin = await ghcupBin(os);
   const returnCode = await exec(
     bin,
-    [tool === 'ghc' ? 'install' : 'install-cabal', version],
+    [tool === 'ghc' ? 'install ghc' : 'install-cabal', version],
     {
       ignoreReturnCode: true
     }

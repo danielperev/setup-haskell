@@ -11199,7 +11199,7 @@ async function ghcupBin(os) {
 async function ghcup(tool, version, os) {
     core.info(`Attempting to install ${tool} ${version} using ghcup`);
     const bin = await ghcupBin(os);
-    const returnCode = await exec_1.exec(bin, [tool === 'ghc' ? 'install' : 'install-cabal', version], {
+    const returnCode = await exec_1.exec(bin, [tool === 'ghc' ? 'install ghc' : 'install-cabal', version], {
         ignoreReturnCode: true
     });
     if (returnCode === 0 && tool === 'ghc')
